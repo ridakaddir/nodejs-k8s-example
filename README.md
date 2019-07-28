@@ -3,3 +3,6 @@
 - Deployment file 
 - Service file
 - Ingress file 
+
+Tested localy on minikube 
+to pull images from local machine `eval $(minikube docker-env)`
