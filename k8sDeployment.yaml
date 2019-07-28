@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: member-service
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: member-service
+    spec: # pod spec
+      containers:
+        - name: member-service
+          image: skolov/member-service:latest # image we pushed
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

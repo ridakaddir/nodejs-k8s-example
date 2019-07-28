@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: elastic-loyalty
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: elastic-loyalty.local
+      http:
+        paths:
+          - path: /member
+            backend:
+              serviceName: member-service
+              servicePort: 80
