@@ -4,7 +4,7 @@ const app = express();
 const hostname = os.hostname();
 
 app.get("/", function(req, res) {
-  res.send("Hello Member!" + `\n hostname is ${hostname}`);
+  res.send("Hello !" + `\n hostname is ${hostname}`);
 });
 
 app.listen(8080, function() {

@@ -1,0 +1,11 @@
+apiVersion: skaffold/v1beta14
+kind: Config
+build:
+  artifacts:
+  - image: skolov/member-service
+deploy:
+  kubectl:
+    manifests:
+    - k8sDeployment.yaml
+    - k8sIngress.yaml
+    - k8sService.yaml

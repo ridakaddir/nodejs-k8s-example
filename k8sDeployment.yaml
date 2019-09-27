@@ -1,9 +1,14 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: member-service
+  labels:
+    app: member-service
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: member-service
   template:
     metadata:
       labels: # labels to select/identify the deployment
